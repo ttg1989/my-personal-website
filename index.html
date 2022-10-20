@@ -37,8 +37,43 @@
                 <img src="./images/screen-shot-one.png" alt="Screenshot of a game" title="Bloody-Cute">
                 <img src="./images/screen-shot-two.png" alt="Screenshot of a game" title="Unnamed Game Alpha">
             </section>
-
+            <section id="Code Example">
+                <p>I have been coding on and off for over a decade now, however I have really honed my skills over the past year.
+                   While I am by no means an expert at coding, I have reached a level of proficiency. Click the button below if you'd like to see
+                   a sample of my code.</p>
+                   <button id="code-btn">Click here to see my code!</button>
+                   <code><pre>
+void SwapRecords(int oldPosition, int newPosition, bool updatedFrag, bool updatedDeath, bool recursion = true)<br>
+{<br>
+    int tempPos = platformGameManager.positionDictionary[positionsList[newPosition].playerNum]; //Swap out the positions in the platformgamemanger position dictionary for the two records.<br>
+    platformGameManager.positionDictionary[positionsList[newPosition].playerNum] = oldPosition;<br> 
+    platformGameManager.positionDictionary[positionsList[oldPosition].playerNum] = tempPos;<br>
+    <br>
+    PlatformGameManager.PlayerStatistic temp = new PlatformGameManager.PlayerStatistic(positionsList[newPosition].player,positionsList[newPosition].frags,positionsList[newPosition].deaths, positionsList[newPosition].points); // Swap out the positions in the position list.<br>
+    positionsList[newPosition] = new PlatformGameManager.PlayerStatistic(positionsList[oldPosition].player,positionsList[oldPosition].frags,positionsList[oldPosition].deaths, positionsList[oldPosition].points);<br>
+    positionsList[oldPosition] = temp;<br>
+    <br>
+    if(oldPosition <= MAX_STATS_REGULAR - 1) // If the statistic we are swapping for is within the scoreboard range, update the scoreboard.<br>
+    {<br>
+        UpdateWholeScoreboardRecord(oldPosition,positionsList[oldPosition]);<br>
+    }<br>
+    <br>
+    if(recursion)<br>
+        UpdateRecord(positionsList[newPosition].playerNum,updatedFrag,updatedDeath);<br>
+}<br>
+                </pre></code>
+            </section>
+            <section id="Links">
+                <p>Here are some links to my favorite websites that involve coding and code. I have found all of these to be invaluable 
+                when it comes to learning how to code.</p>
+                <a href="https://unity.com/"><img src="./images/logo-unity.png" title="Unity" alt="Unity Logo" class="image-links" id="unity"></a>
+                <a href="https://leetcode.com/"><img src="./images/logo-leet-code.png" title="LeetCode" alt="LeetCode Logo" class="image-links" id="leet"></a>
+                <a href="https://www.udemy.com/"><img src="./images/logo-udemy.png" title="Udemy" alt="Udemy Logo" class="image-links" id="udemy"></a>
+            </section>
         </article>
+        <footer>
+            <p>Thank you for visiting my webpage, this webiste is &copy;2022 Christopher Sloss. If you have any questions or would like to leave feedback feel free to e-mail me at "insert email here".</p>
+        </footer>
         <script src="script.js"></script>
     </body>
 </html>

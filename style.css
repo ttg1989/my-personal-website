@@ -26,3 +26,15 @@ section#video-game-gallery
 {
     display: none;
 }
+
+code
+{
+    display: none;
+}
+
+img.image-links
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
