@@ -1,4 +1,28 @@
-body
+header
 {
-    background: blue;
+    display: flex;
+    flex-direction: row;
+}
+
+section#title
+{
+    flex: 2;
+}
+
+section#picture-title
+{
+    flex: 1;
+}
+
+section#picture-title img
+{
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section#video-game-gallery
+{
+    display: none;
 }
