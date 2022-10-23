@@ -4,21 +4,62 @@ const LogoType = {
     Udemy: 'Udemy',
 };
 
+const BackgroundType = {
+    None: 'None',
+    Brown: 'Brown',
+    Galaxy: 'Galaxy',
+    Road: 'Road',
+};
+
 const h2 = document.createElement("h2");
 h2.textContent = "This content added by JavaScript";
 document.querySelector("body").appendChild(h2);
+
+document.getElementById("none").onclick = function(){changeBackground(BackgroundType.None);} 
+document.getElementById("brown").onclick = function(){changeBackground(BackgroundType.Brown);} 
+document.getElementById("galaxy").onclick = function(){changeBackground(BackgroundType.Galaxy);} 
+document.getElementById("road").onclick = function(){changeBackground(BackgroundType.Road);} 
 
 document.getElementById("language-btn").onclick = displayLanguages;
 document.getElementById("video-game-btn").onclick = displayGallery;
 document.getElementById("code-btn").onclick = displayCode;
 
-document.getElementById("unity").onmouseover = displayLogoText(LogoType.Unity);
-document.getElementById("leet").onmouseover = displayLogoText(LogoType.Leet);
-document.getElementById("udemy").onmouseover  = displayLogoText(LogoType.Udemy);
+document.getElementById("unity-pic").onmouseover = function(){displayLogoText(LogoType.Unity);} 
+document.getElementById("leet-pic").onmouseover = function(){displayLogoText(LogoType.Leet);} 
+document.getElementById("udemy-pic").onmouseover = function(){displayLogoText(LogoType.Udemy);} 
+
+document.getElementById("unity-pic").onmouseleave = function(){removeLogoText(LogoType.Unity);} 
+document.getElementById("leet-pic").onmouseleave = function(){removeLogoText(LogoType.Leet);} 
+document.getElementById("udemy-pic").onmouseleave = function(){removeLogoText(LogoType.Udemy);} 
 
 let showLanguages = true;
 let showGallery = true;
 let showCode = true;
+
+
+function changeBackground(backgroundType)
+{
+    const body = document.querySelector("body");
+
+    switch(backgroundType)
+    {
+        case BackgroundType.None:
+            body.style.backgroundImage = "none";
+            break;
+        
+        case BackgroundType.Brown:
+            body.style.backgroundImage = "url(images/backgrounds/brown-canvas.jpg)";       
+            break;
+        
+        case BackgroundType.Galaxy:
+            body.style.backgroundImage = "url(images/backgrounds/galaxy.jpg)"; 
+            break;
+
+        case BackgroundType.Road:
+            body.style.backgroundImage = "url(images/backgrounds/road.jpg)"; 
+            break;
+    }
+}
 
 function displayGallery()
 {
@@ -28,13 +69,13 @@ function displayGallery()
     if(showGallery)
     {
         gallery.style.display = "block";
-        button.textContent = "Click here to close the gallery."
+        button.textContent = "Click here to close the gallery.";
         showGallery = false;
     }
     else
     {
         gallery.style.display = "none";
-        button.textContent = "Click here to see my video games!"
+        button.textContent = "Click here to see my video games!";
         showGallery = true;
     }
 }
@@ -59,7 +100,7 @@ function displayLanguages()
         ol.appendChild(li1);
         ol.appendChild(li2);
         ol.appendChild(li3);
-        button.textContent ="Click here to close the list."
+        button.textContent ="Click here to close the list.";
         showLanguages = false;
     }
     else
@@ -67,7 +108,7 @@ function displayLanguages()
 
         const ol = document.getElementById("lang-list");
         ol.remove();
-        button.textContent ="Click here to see my three favorite languages!"
+        button.textContent ="Click here to see my three favorite languages!";
         showLanguages = true;
     }
 
@@ -82,40 +123,62 @@ function displayCode()
     if(showCode)
     {
         code.style.display = "block";
-        button.textContent = "Click here to close the code."
+        button.textContent = "Click here to close the code.";
         showCode = false;
     }
     else
     {
         code.style.display = "none";
-        button.textContent = "Click here to see my code!"
+        button.textContent = "Click here to see my code!";
         showCode = true;
     }
 }
 
-function displayLogoText(logoNum)
+function removeLogoText(logo)
+{
+    let p;
+
+    switch(logo)
+    {
+        case LogoType.Unity:
+            p = document.getElementById("unity-text");
+            break;
+        
+        case LogoType.Leet:
+            p = document.getElementById("leet-text");       
+            break;
+        
+        case LogoType.Udemy:
+            p = document.getElementById("udemy-text");
+            break;
+    }
+
+    p.remove();
+}
+
+function displayLogoText(logo)
 {
     const p = document.createElement("p");
 
-    switch(logoNum)
+    switch(logo)
     {
         case LogoType.Unity:
             console.log("debug");
             p.setAttribute("id","unity-text");
             p.textContent = "The Unity Engine - One of the best engines for creating video games.";
-            document.getElementById("unity").appendChild(p);
+            document.getElementById("unity-div").appendChild(p);
             break;
         case LogoType.Leet:
             console.log("debug2");
             p.setAttribute("id","leet-text");
             p.textContent = "LeetCode - One of the best websites to learn code from the professionals.";
-            document.getElementById("leet").appendChild(p);
-            break
+            document.getElementById("leet-div").appendChild(p);
+            break;
         case LogoType.Udemy:
             console.log("debug3");
             p.setAttribute("id","udemy-text");
             p.textContent = "Udemy - An excellent website with thousands of tutorials on learning how to code.";
-            document.getElementById("leet").appendChild(p);
+            document.getElementById("udemy-div").appendChild(p);
             break;
     }
 }

@@ -16,8 +16,21 @@
         </header>
         <article>
             <hr>
+            <div id="background">
+                <p>
+                Select background:
+                <input type="radio" id="none" name="shirt-size" value="none" checked>
+                <label for="none">None</label>
+                <input type="radio" id="brown" name="shirt-size" value="brown">
+                <label for="brown">Brown Canvas</label>
+                <input type="radio" id="galaxy" name="shirt-size" value="galaxy">
+                <label for="galaxy">Galaxy</label>
+                <input type="radio" id="road" name="shirt-size" value="road">
+                <label for="road">Road</label>
+                </p>
+               </div>
             <h2>About Me</h2>
-            <section id="intro"></section>
+            <section id="intro">
                 <p>My name is Christopher Sloss, I am a 32 year old currently studying Software Engineering at Flatiron School. I have been programming
                 on and off for over a decade now and have experince in a variety of languages. I have extensive knowledge in C# and the Unity Engine.</p>
                 <p>Would you like to know what my three favorite languages are? Click the button below to find out!</p>
@@ -37,7 +50,7 @@
                 <img src="./images/screen-shot-one.png" alt="Screenshot of a game" title="Bloody-Cute">
                 <img src="./images/screen-shot-two.png" alt="Screenshot of a game" title="Unnamed Game Alpha">
             </section>
-            <section id="Code Example">
+            <section id="Code-Example">
                 <p>I have been coding on and off for over a decade now, however I have really honed my skills over the past year.
                    While I am by no means an expert at coding, I have reached a level of proficiency. Click the button below if you'd like to see
                    a sample of my code.</p>
@@ -66,9 +79,15 @@ void SwapRecords(int oldPosition, int newPosition, bool updatedFrag, bool update
             <section id="Links">
                 <p>Here are some links to my favorite websites that involve coding and code. I have found all of these to be invaluable 
                 when it comes to learning how to code.</p>
-                <a href="https://unity.com/"><img src="./images/logo-unity.png" title="Unity" alt="Unity Logo" class="image-links" id="unity"></a>
-                <a href="https://leetcode.com/"><img src="./images/logo-leet-code.png" title="LeetCode" alt="LeetCode Logo" class="image-links" id="leet"></a>
-                <a href="https://www.udemy.com/"><img src="./images/logo-udemy.png" title="Udemy" alt="Udemy Logo" class="image-links" id="udemy"></a>
+                <div id="unity-div">
+                    <a href="https://unity.com/"><img src="./images/logo-unity.png" title="Unity" alt="Unity Logo" class="image-links" id="unity-pic"></a>
+                </div>
+                <div id="leet-div">
+                    <a href="https://leetcode.com/"><img src="./images/logo-leet-code.png" title="LeetCode" alt="LeetCode Logo" class="image-links" id="leet-pic"></a>
+                </div>
+                <div id="udemy-div">
+                    <a href="https://www.udemy.com/"><img src="./images/logo-udemy.png" title="Udemy" alt="Udemy Logo" class="image-links" id="udemy-pic"></a>
+                </div>
             </section>
         </article>
         <footer>
