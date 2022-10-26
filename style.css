@@ -1,20 +1,39 @@
+@font-face
+{
+    font-family: 'montserrat_alternatesregular';
+    src: url('./Fonts/montserratalternates-regular-webfont.woff') format('woff2'),
+         url('./Fonts/montserratalternates-regular-webfont.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('./Fonts/roboto-regular-webfont.woff') format('woff2'),
+         url('./Fonts/roboto-regular-webfont.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 header
 {
     display: flex;
     flex-direction: row;
 }
 
-section#title
+div#title
 {
     flex: 2;
 }
 
-section#picture-title
+div#picture-title
 {
     flex: 1;
 }
 
-section#picture-title img
+div#picture-title img
 {
     border-radius: 50%;
     display: block;
@@ -39,7 +58,99 @@ img.image-links
     margin-right: auto;
 }
 
+header
+{
+    font-family: 'montserrat_alternatesregular';
+    font-size: 15pt;
+}
+
+div#title
+{
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+header div#title h1
+{
+    font-size: 40pt;
+}
+
 body
 {
-    background-image: url("images/backgrounds/brown-canvas.jpg");
+    background-color: beige;
+}
+
+hr
+{
+    height: 5px;
+    background-color: gray;
+}
+
+main, footer
+{
+    font-family: 'robotoregular';
+    margin: 0px 20px 0px 20px;
+}
+
+div#background, div#unity-div, div#leet-div, div#udemy-div, footer
+{
+    text-align: center;
+}
+
+h2
+{
+    text-align: center;
+    font-size: 30pt;
+}
+
+h3
+{
+    text-align: center;
+    font-size: 25pt;
+}
+
+.italic
+{
+    font-style: italic;
+    text-decoration: underline;
+}
+
+div#unity-div a, div#leet-div a, div#udemy-div a
+{
+    padding: 10px;
+}
+
+.tab
+{
+    margin-left: 40px;
+}
+
+.double-tab
+{
+    margin-left: 80px;
+}
+
+a.definition:link
+{
+   color:blue;
+}
+
+a:visited
+{
+   color:rebeccapurple;
+}
+
+a:focus
+{
+   color:orange;
+}
+
+a:hover
+{
+   color:green;
+}
+
+a:active
+{
+   color:red;
 }

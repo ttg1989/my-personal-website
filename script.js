@@ -11,26 +11,22 @@ const BackgroundType = {
     Road: 'Road',
 };
 
-const h2 = document.createElement("h2");
-h2.textContent = "This content added by JavaScript";
-document.querySelector("body").appendChild(h2);
-
-document.getElementById("none").onclick = function(){changeBackground(BackgroundType.None);} 
-document.getElementById("brown").onclick = function(){changeBackground(BackgroundType.Brown);} 
-document.getElementById("galaxy").onclick = function(){changeBackground(BackgroundType.Galaxy);} 
-document.getElementById("road").onclick = function(){changeBackground(BackgroundType.Road);} 
+document.getElementById("none").onclick = function(){changeBackground(BackgroundType.None);};
+document.getElementById("brown").onclick = function(){changeBackground(BackgroundType.Brown);}; 
+document.getElementById("galaxy").onclick = function(){changeBackground(BackgroundType.Galaxy);}; 
+document.getElementById("road").onclick = function(){changeBackground(BackgroundType.Road);}; 
 
 document.getElementById("language-btn").onclick = displayLanguages;
 document.getElementById("video-game-btn").onclick = displayGallery;
 document.getElementById("code-btn").onclick = displayCode;
 
-document.getElementById("unity-pic").onmouseover = function(){displayLogoText(LogoType.Unity);} 
-document.getElementById("leet-pic").onmouseover = function(){displayLogoText(LogoType.Leet);} 
-document.getElementById("udemy-pic").onmouseover = function(){displayLogoText(LogoType.Udemy);} 
+document.getElementById("unity-pic").onmouseover = function(){displayLogoText(LogoType.Unity);}; 
+document.getElementById("leet-pic").onmouseover = function(){displayLogoText(LogoType.Leet);}; 
+document.getElementById("udemy-pic").onmouseover = function(){displayLogoText(LogoType.Udemy);}; 
 
-document.getElementById("unity-pic").onmouseleave = function(){removeLogoText(LogoType.Unity);} 
-document.getElementById("leet-pic").onmouseleave = function(){removeLogoText(LogoType.Leet);} 
-document.getElementById("udemy-pic").onmouseleave = function(){removeLogoText(LogoType.Udemy);} 
+document.getElementById("unity-pic").onmouseleave = function(){removeLogoText(LogoType.Unity);}; 
+document.getElementById("leet-pic").onmouseleave = function(){removeLogoText(LogoType.Leet);}; 
+document.getElementById("udemy-pic").onmouseleave = function(){removeLogoText(LogoType.Udemy);}; 
 
 let showLanguages = true;
 let showGallery = true;
@@ -45,18 +41,27 @@ function changeBackground(backgroundType)
     {
         case BackgroundType.None:
             body.style.backgroundImage = "none";
+            body.style.backgroundColor = "biege";
+            body.style.color = "black";
+            body.style.textShadow = "none"; 
             break;
         
         case BackgroundType.Brown:
-            body.style.backgroundImage = "url(images/backgrounds/brown-canvas.jpg)";       
+            body.style.backgroundImage = "url(images/backgrounds/brown-canvas.jpg)";
+            body.style.color = "black";
+            body.style.textShadow = "none";       
             break;
         
         case BackgroundType.Galaxy:
             body.style.backgroundImage = "url(images/backgrounds/galaxy.jpg)"; 
+            body.style.color = "yellow";
+            body.style.textShadow = "1px 1px blue";
             break;
 
         case BackgroundType.Road:
-            body.style.backgroundImage = "url(images/backgrounds/road.jpg)"; 
+            body.style.backgroundImage = "url(images/backgrounds/road.jpg)";
+            body.style.color = "yellow";
+            body.style.textShadow = "1px 1px blue";
             break;
     }
 }

@@ -6,15 +6,15 @@
     </head>
     <body>
         <header>
-            <section id="title">
+            <div id="title">
                 <h1>Christopher Sloss</h1>
                 <p>C# Developer and General Computer Programmer</p>
-            </section>
-            <section id="picture-title">
+            </div>
+            <div id="picture-title">
                 <img src= "./images/my-picture.png" alt="My picture" title="My picture" id="portrait">
-            </section>
+            </div>
         </header>
-        <article>
+        <main>
             <hr>
             <div id="background">
                 <p>
@@ -29,15 +29,16 @@
                 <label for="road">Road</label>
                 </p>
                </div>
-            <h2>About Me</h2>
             <section id="intro">
-                <p>My name is Christopher Sloss, I am a 32 year old currently studying Software Engineering at Flatiron School. I have been programming
+                <h2>About Me</h2>
+                <p>My name is <span class="italic">Christopher Sloss</span>, I am a 32 year old currently studying Software Engineering at Flatiron School. I have been programming
                 on and off for over a decade now and have experince in a variety of languages. I have extensive knowledge in C# and the Unity Engine.</p>
                 <p>Would you like to know what my three favorite languages are? Click the button below to find out!</p>
                 <button id="language-btn">Click here to see my three favorite languages!</button>
                 <p id="language-list"></p>
             </section>
             <section id="unity">
+                <h3>Unity</h3>
                 <p>I have been programming video games in the Unity Engine for about a year now. I learned to do this mostly using
                 video tutorials on <a href="https://www.youtube.com" title="YouTube">YouTube</a>. Being self-taught can be challenging
                 at times but it is very rewarding also. I have programmed a total of two video games in Unity. One game is finished, while
@@ -51,32 +52,34 @@
                 <img src="./images/screen-shot-two.png" alt="Screenshot of a game" title="Unnamed Game Alpha">
             </section>
             <section id="Code-Example">
+                <h3>My code</h3>
                 <p>I have been coding on and off for over a decade now, however I have really honed my skills over the past year.
                    While I am by no means an expert at coding, I have reached a level of proficiency. Click the button below if you'd like to see
                    a sample of my code.</p>
                    <button id="code-btn">Click here to see my code!</button>
-                   <code><pre>
+                   <code>
 void SwapRecords(int oldPosition, int newPosition, bool updatedFrag, bool updatedDeath, bool recursion = true)<br>
 {<br>
-    int tempPos = platformGameManager.positionDictionary[positionsList[newPosition].playerNum]; //Swap out the positions in the platformgamemanger position dictionary for the two records.<br>
-    platformGameManager.positionDictionary[positionsList[newPosition].playerNum] = oldPosition;<br> 
-    platformGameManager.positionDictionary[positionsList[oldPosition].playerNum] = tempPos;<br>
+    <span class="tab">int tempPos = platformGameManager.positionDictionary[positionsList[newPosition].playerNum]; //Swap out the positions in the platformgamemanger position dictionary for the two records.</span><br>
+    <span class="tab">platformGameManager.positionDictionary[positionsList[newPosition].playerNum] = oldPosition;</span><br> 
+    <span class="tab">platformGameManager.positionDictionary[positionsList[oldPosition].playerNum] = tempPos;</span><br>
     <br>
-    PlatformGameManager.PlayerStatistic temp = new PlatformGameManager.PlayerStatistic(positionsList[newPosition].player,positionsList[newPosition].frags,positionsList[newPosition].deaths, positionsList[newPosition].points); // Swap out the positions in the position list.<br>
-    positionsList[newPosition] = new PlatformGameManager.PlayerStatistic(positionsList[oldPosition].player,positionsList[oldPosition].frags,positionsList[oldPosition].deaths, positionsList[oldPosition].points);<br>
-    positionsList[oldPosition] = temp;<br>
+    <span class="tab">PlatformGameManager.PlayerStatistic temp = new PlatformGameManager.PlayerStatistic(positionsList[newPosition].player,positionsList[newPosition].frags,positionsList[newPosition].deaths, positionsList[newPosition].points); // Swap out the positions in the position list.</span><br>
+    <span class="tab">positionsList[newPosition] = new PlatformGameManager.PlayerStatistic(positionsList[oldPosition].player,positionsList[oldPosition].frags,positionsList[oldPosition].deaths, positionsList[oldPosition].points);</span><br>
+    <span class="tab">positionsList[oldPosition] = temp;</span><br>
     <br>
-    if(oldPosition <= MAX_STATS_REGULAR - 1) // If the statistic we are swapping for is within the scoreboard range, update the scoreboard.<br>
-    {<br>
-        UpdateWholeScoreboardRecord(oldPosition,positionsList[oldPosition]);<br>
-    }<br>
+    <span class="tab">if(oldPosition &lt;= MAX_STATS_REGULAR - 1) // If the statistic we are swapping for is within the scoreboard range, update the scoreboard.</span><br>
+    <span class="tab">{</span><br>
+        <span class="double-tab">UpdateWholeScoreboardRecord(oldPosition,positionsList[oldPosition]);</span><br>
+    <span class="tab">}</span><br>
     <br>
-    if(recursion)<br>
-        UpdateRecord(positionsList[newPosition].playerNum,updatedFrag,updatedDeath);<br>
+    <span class="tab">if(recursion)</span><br>
+        <span class="double-tab">UpdateRecord(positionsList[newPosition].playerNum,updatedFrag,updatedDeath);</span><br>
 }<br>
-                </pre></code>
+                </code>
             </section>
-            <section id="Links">
+            <section id="links">
+                <h3>Links</h3>
                 <p>Here are some links to my favorite websites that involve coding and code. I have found all of these to be invaluable 
                 when it comes to learning how to code.</p>
                 <div id="unity-div">
@@ -88,10 +91,11 @@ void SwapRecords(int oldPosition, int newPosition, bool updatedFrag, bool update
                 <div id="udemy-div">
                     <a href="https://www.udemy.com/"><img src="./images/logo-udemy.png" title="Udemy" alt="Udemy Logo" class="image-links" id="udemy-pic"></a>
                 </div>
+                <hr>
             </section>
-        </article>
+        </main>
         <footer>
-            <p>Thank you for visiting my webpage, this webiste is &copy;2022 Christopher Sloss. If you have any questions or would like to leave feedback feel free to e-mail me at "insert email here".</p>
+            <p>Thank you for visiting my webpage, this webiste is &copy;2022 Christopher Sloss. If you have any questions or would like to leave feedback feel free to e-mail me at <a href = "mailto:chrisloss@fakemail.com?subject=Hello!">chrissloss@fakemail.com</a></p>
         </footer>
         <script src="script.js"></script>
     </body>
