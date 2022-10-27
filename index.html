@@ -56,26 +56,26 @@
                 <p>I have been coding on and off for over a decade now, however I have really honed my skills over the past year.
                    While I am by no means an expert at coding, I have reached a level of proficiency. Click the button below if you'd like to see
                    a sample of my code.</p>
-                   <button id="code-btn">Click here to see my code!</button>
-                   <code>
-void SwapRecords(int oldPosition, int newPosition, bool updatedFrag, bool updatedDeath, bool recursion = true)<br>
-{<br>
-    <span class="tab">int tempPos = platformGameManager.positionDictionary[positionsList[newPosition].playerNum]; //Swap out the positions in the platformgamemanger position dictionary for the two records.</span><br>
-    <span class="tab">platformGameManager.positionDictionary[positionsList[newPosition].playerNum] = oldPosition;</span><br> 
-    <span class="tab">platformGameManager.positionDictionary[positionsList[oldPosition].playerNum] = tempPos;</span><br>
-    <br>
-    <span class="tab">PlatformGameManager.PlayerStatistic temp = new PlatformGameManager.PlayerStatistic(positionsList[newPosition].player,positionsList[newPosition].frags,positionsList[newPosition].deaths, positionsList[newPosition].points); // Swap out the positions in the position list.</span><br>
-    <span class="tab">positionsList[newPosition] = new PlatformGameManager.PlayerStatistic(positionsList[oldPosition].player,positionsList[oldPosition].frags,positionsList[oldPosition].deaths, positionsList[oldPosition].points);</span><br>
-    <span class="tab">positionsList[oldPosition] = temp;</span><br>
-    <br>
-    <span class="tab">if(oldPosition &lt;= MAX_STATS_REGULAR - 1) // If the statistic we are swapping for is within the scoreboard range, update the scoreboard.</span><br>
-    <span class="tab">{</span><br>
-        <span class="double-tab">UpdateWholeScoreboardRecord(oldPosition,positionsList[oldPosition]);</span><br>
-    <span class="tab">}</span><br>
-    <br>
-    <span class="tab">if(recursion)</span><br>
-        <span class="double-tab">UpdateRecord(positionsList[newPosition].playerNum,updatedFrag,updatedDeath);</span><br>
-}<br>
+                <button id="code-btn">Click here to see my code!</button>
+                <code>
+                    void SwapRecords(int oldPosition, int newPosition, bool updatedFrag, bool updatedDeath, bool recursion = true)<br>
+                    {<br>
+                    <span class="tab">int tempPos = platformGameManager.positionDictionary[positionsList[newPosition].playerNum]; //Swap out the positions in the platformgamemanger position dictionary for the two records.</span><br>
+                    <span class="tab">platformGameManager.positionDictionary[positionsList[newPosition].playerNum] = oldPosition;</span><br> 
+                    <span class="tab">platformGameManager.positionDictionary[positionsList[oldPosition].playerNum] = tempPos;</span><br>
+                    <br>
+                    <span class="tab">PlatformGameManager.PlayerStatistic temp = new PlatformGameManager.PlayerStatistic(positionsList[newPosition].player,positionsList[newPosition].frags,positionsList[newPosition].deaths, positionsList[newPosition].points); // Swap out the positions in the position list.</span><br>
+                    <span class="tab">positionsList[newPosition] = new PlatformGameManager.PlayerStatistic(positionsList[oldPosition].player,positionsList[oldPosition].frags,positionsList[oldPosition].deaths, positionsList[oldPosition].points);</span><br>
+                    <span class="tab">positionsList[oldPosition] = temp;</span><br>
+                    <br>
+                    <span class="tab">if(oldPosition &lt;= MAX_STATS_REGULAR - 1) // If the statistic we are swapping for is within the scoreboard range, update the scoreboard.</span><br>
+                    <span class="tab">{</span><br>
+                    <span class="double-tab">UpdateWholeScoreboardRecord(oldPosition,positionsList[oldPosition]);</span><br>
+                    <span class="tab">}</span><br>
+                    <br>
+                    <span class="tab">if(recursion)</span><br>
+                    <span class="double-tab">UpdateRecord(positionsList[newPosition].playerNum,updatedFrag,updatedDeath);</span><br>
+                    }<br>
                 </code>
             </section>
             <section id="links">

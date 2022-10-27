@@ -1,39 +1,39 @@
-const LogoType = {
+const LogoType = { // Enumerated type for the logo hover function
     Unity: 'Unity',
     Leet: 'Leet',
     Udemy: 'Udemy',
 };
 
-const BackgroundType = {
+const BackgroundType = { // Enumerated type for the background change function
     None: 'None',
     Brown: 'Brown',
     Galaxy: 'Galaxy',
     Road: 'Road',
 };
 
-document.getElementById("none").onclick = function(){changeBackground(BackgroundType.None);};
+document.getElementById("none").onclick = function(){changeBackground(BackgroundType.None);}; // When the user clicks a radio button, change the background on the page.
 document.getElementById("brown").onclick = function(){changeBackground(BackgroundType.Brown);}; 
 document.getElementById("galaxy").onclick = function(){changeBackground(BackgroundType.Galaxy);}; 
 document.getElementById("road").onclick = function(){changeBackground(BackgroundType.Road);}; 
 
-document.getElementById("language-btn").onclick = displayLanguages;
+document.getElementById("language-btn").onclick = displayLanguages; // Display content when user clicks the button.
 document.getElementById("video-game-btn").onclick = displayGallery;
 document.getElementById("code-btn").onclick = displayCode;
 
-document.getElementById("unity-pic").onmouseover = function(){displayLogoText(LogoType.Unity);}; 
+document.getElementById("unity-pic").onmouseover = function(){displayLogoText(LogoType.Unity);}; // When the user's mouse hovers over a logo, display the information text.
 document.getElementById("leet-pic").onmouseover = function(){displayLogoText(LogoType.Leet);}; 
 document.getElementById("udemy-pic").onmouseover = function(){displayLogoText(LogoType.Udemy);}; 
 
-document.getElementById("unity-pic").onmouseleave = function(){removeLogoText(LogoType.Unity);}; 
+document.getElementById("unity-pic").onmouseleave = function(){removeLogoText(LogoType.Unity);}; // When the user's mouse exits over a logo, hide the information text.
 document.getElementById("leet-pic").onmouseleave = function(){removeLogoText(LogoType.Leet);}; 
 document.getElementById("udemy-pic").onmouseleave = function(){removeLogoText(LogoType.Udemy);}; 
 
-let showLanguages = true;
+let showLanguages = true; // Set the booleans initial state to true so that the user can click the buttons and see the information.
 let showGallery = true;
 let showCode = true;
 
 
-function changeBackground(backgroundType)
+function changeBackground(backgroundType) //Depending on the type past in, change the background image and text color of the document body.
 {
     const body = document.querySelector("body");
 
@@ -66,7 +66,7 @@ function changeBackground(backgroundType)
     }
 }
 
-function displayGallery()
+function displayGallery() // Hide or unhide the video game gallery when the user clicks the button and change the button text.
 {
     const gallery = document.getElementById("video-game-gallery");
     const button = document.getElementById("video-game-btn");
@@ -85,14 +85,13 @@ function displayGallery()
     }
 }
 
-function displayLanguages()
+function displayLanguages() //If the showLanguages boolean is true create the list, otherwise destroy it.
 {
     const button = document.getElementById("language-btn");
 
-    if(showLanguages)
+    if(showLanguages) // Create list and update button.
     {
         const ol = document.createElement("ol");
-        console.log("element clicked");
         ol.setAttribute("id","lang-list");
         document.getElementById("language-list").appendChild(ol);
         const li1 = document.createElement("li");
@@ -108,7 +107,7 @@ function displayLanguages()
         button.textContent ="Click here to close the list.";
         showLanguages = false;
     }
-    else
+    else //Destroy list and reset button.
     {
 
         const ol = document.getElementById("lang-list");
@@ -120,7 +119,7 @@ function displayLanguages()
 
 }
 
-function displayCode()
+function displayCode() // When the user clicks the button display or hide the code section.
 {
     const code = document.querySelector("code");
     const button = document.getElementById("code-btn");
@@ -139,7 +138,7 @@ function displayCode()
     }
 }
 
-function removeLogoText(logo)
+function removeLogoText(logo) // Get the logo text element depending on the type passed in and remove it.
 {
     let p;
 
@@ -161,26 +160,23 @@ function removeLogoText(logo)
     p.remove();
 }
 
-function displayLogoText(logo)
+function displayLogoText(logo) // Create the logo text below the logo for the type passed in.
 {
     const p = document.createElement("p");
 
     switch(logo)
     {
         case LogoType.Unity:
-            console.log("debug");
             p.setAttribute("id","unity-text");
             p.textContent = "The Unity Engine - One of the best engines for creating video games.";
             document.getElementById("unity-div").appendChild(p);
             break;
         case LogoType.Leet:
-            console.log("debug2");
             p.setAttribute("id","leet-text");
             p.textContent = "LeetCode - One of the best websites to learn code from the professionals.";
             document.getElementById("leet-div").appendChild(p);
             break;
         case LogoType.Udemy:
-            console.log("debug3");
             p.setAttribute("id","udemy-text");
             p.textContent = "Udemy - An excellent website with thousands of tutorials on learning how to code.";
             document.getElementById("udemy-div").appendChild(p);
